@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MVC_Application.Data;
+using MVC_Application.Models.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,12 @@ builder.Services.AddControllersWithViews();
 //Injecting db context class into our application
 builder.Services.AddDbContext<BloggieDBContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("BloggieDbConnection")));
+
+//INJECTING TAG REPOSITORY
+builder.Services.AddScoped<ITagRepository, TagRepository>();
+
+//INJECTING BLOPOST REPOSITORY
+builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository>();
 
 var app = builder.Build();
 
