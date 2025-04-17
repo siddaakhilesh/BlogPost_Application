@@ -62,7 +62,14 @@ namespace MVC_Application.Controllers
             await blogPostRepository.AddAsync(blogPost);
             return RedirectToAction("Add");
         }
+        [HttpGet]
+        public async Task<IActionResult> List()
+        {
+            //call the repository
+            var blogPosts = await blogPostRepository.GetAllAsync();
 
+            return View(blogPosts);
+        }
     }
 }
 
