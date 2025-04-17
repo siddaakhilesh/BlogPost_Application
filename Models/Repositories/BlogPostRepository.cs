@@ -4,6 +4,7 @@ using MVC_Application.Data;
 using MVC_Application.Models.Domain;
 using MVC_Application.Models.ViewModels;
 using MVC_Application.Models.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace MVC_Application.Models.Repositories
 {
@@ -27,9 +28,9 @@ namespace MVC_Application.Models.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<BlogPost>> GetAllAsync()
+        public async Task<IEnumerable<BlogPost>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await bloggieDbCOntext.BlogPosts.Include(x=>x.Tags).ToListAsync();
         }
 
         public Task<BlogPost?> GetAsync(Guid id)
