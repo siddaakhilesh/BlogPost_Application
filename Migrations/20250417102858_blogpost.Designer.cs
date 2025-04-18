@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Application.Migrations
 {
     [DbContext(typeof(BloggieDBContext))]
-    [Migration("20250402104102_Initial Migration")]
-    partial class InitialMigration
+    [Migration("20250417102858_blogpost")]
+    partial class blogpost
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,6 +47,10 @@ namespace MVC_Application.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

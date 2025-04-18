@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Application.Migrations
 {
     [DbContext(typeof(BloggieDBContext))]
-    [Migration("20250402105040_Third Migration")]
-    partial class ThirdMigration
+    [Migration("20250417063941_NewMigration")]
+    partial class NewMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

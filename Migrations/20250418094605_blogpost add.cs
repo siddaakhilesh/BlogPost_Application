@@ -5,7 +5,7 @@
 namespace MVC_Application.Migrations
 {
     /// <inheritdoc />
-    public partial class SecondMigration : Migration
+    public partial class blogpostadd : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -14,7 +14,7 @@ builder.Services.AddDbContext<BloggieDBContext>(
 //INJECTING TAG REPOSITORY
 builder.Services.AddScoped<ITagRepository, TagRepository>();
 
-//INJECTING BLOPOST REPOSITORY
+//INJECTING BLOGPOST REPOSITORY
 builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository>();
 
 var app = builder.Build();
