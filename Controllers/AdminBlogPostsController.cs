@@ -4,9 +4,11 @@ using MVC_Application.Models.Repositories;
 using MVC_Application.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MVC_Application.Models.Domain;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MVC_Application.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminBlogPostsController : Controller
     {
         private readonly ITagRepository tagRepository;

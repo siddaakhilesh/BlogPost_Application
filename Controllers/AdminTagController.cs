@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using MVC_Application.Data;
@@ -9,6 +10,7 @@ using System.Security.Cryptography.Xml;
 
 namespace MVC_Application.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminTagController : Controller
     {
         private readonly ITagRepository tagRepository;
@@ -16,6 +18,7 @@ namespace MVC_Application.Controllers
         {
                 this.tagRepository = tagRepository;
         }
+
         [HttpGet]
         public IActionResult Add()
         {
